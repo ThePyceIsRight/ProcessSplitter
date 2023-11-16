@@ -28,10 +28,8 @@ def main(my_path: str):
     print(f"number of cpus: {mp.cpu_count()}")
 
     frames, im = getFrames(my_path)
-    
-    duration = im.info['duration']
 
-    frames = frames[:10]
+    duration = im.info['duration']
 
     print(f"no. frames: {len(frames)}")
 
@@ -47,7 +45,6 @@ def main(my_path: str):
         edited_frames.append(frame)
 
     # Save the edited frames as a GIF file
-
     edited_frames[0].save('edited.gif',
                           save_all=True,
                           append_images=edited_frames[1:],
